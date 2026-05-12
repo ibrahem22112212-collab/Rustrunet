@@ -1,144 +1,112 @@
-/* استيراد خطوط جوجل الحديثة */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
-
 :root {
-    --primary-color: #d4af37; /* لون ذهبي */
-    --dark-bg: #121212;      /* أسود معاصر */
-    --light-text: #f4f4f4;
-    --gray-text: #a0a0a0;
-    --transition: all 0.4s ease;
+    --gold: #c5a059;
+    --dark: #0a0a0a;
+    --gray: #1a1a1a;
+    --text: #ffffff;
+    --accent: #8e6d2d;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
+    background-color: var(--dark);
+    color: var(--text);
     font-family: 'Cairo', sans-serif;
-    background-color: #ffffff;
-    line-height: 1.6;
-    color: var(--dark-bg);
 }
 
-/* الهيدر والواجهة الرئيسية */
+/* Nav Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.9);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 5px;
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li a {
+    color: var(--text);
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--gold); }
+
+/* Hero Section */
 header {
     height: 100vh;
-    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), 
-                url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920&q=80');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920');
     background-size: cover;
-    background-position: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--light-text);
 }
 
-.logo-text {
-    font-size: 5rem;
-    font-weight: 700;
-    letter-spacing: 10px;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-    text-transform: uppercase;
-}
-
-.tagline {
-    font-size: 1.2rem;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
-    color: var(--gray-text);
-}
-
-/* الأزرار */
-.cta-button {
-    padding: 15px 40px;
-    border: 1px solid var(--primary-color);
-    background: transparent;
-    color: var(--primary-color);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: var(--transition);
-}
-
-.cta-button:hover {
-    background: var(--primary-color);
-    color: #000;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-}
-
-/* قسم القائمة */
-.menu-section {
-    padding: 100px 10%;
-    background-color: #fcfcfc;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title h2 {
-    font-size: 2.5rem;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-}
-
-.section-title h2::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 2px;
-    background: var(--primary-color);
-    bottom: 0;
-    left: 25%;
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 2px;
-    border-bottom: 3px solid transparent;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    transition: var(--transition);
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-color);
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-.card p {
-    color: var(--gray-text);
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: var(--gold);
     margin-bottom: 20px;
+    animation: fadeIn 2s ease-in;
 }
 
-.card .price {
+/* Buttons */
+.btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 15px 40px;
+    text-decoration: none;
     font-weight: bold;
-    color: var(--primary-color);
-    font-size: 1.3rem;
+    border-radius: 50px;
+    margin: 10px;
+    display: inline-block;
+    transition: 0.4s;
 }
 
-/* التذييل */
-footer {
-    background: var(--dark-bg);
-    color: var(--gray-text);
-    padding: 60px 20px;
-    text-align: center;
+.btn-primary:hover {
+    background: var(--text);
+    transform: scale(1.05);
+}
+
+/* Menu Grid */
+.menu-item {
+    background: var(--gray);
+    padding: 20px;
+    border: 1px solid #333;
+    transition: 0.5s;
+}
+
+.menu-item:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 4rem; }
+    nav ul { display: none; } /* يفضل إضافة قائمة جوال هنا */
 }
