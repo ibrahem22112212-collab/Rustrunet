@@ -1,82 +1,354 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura | تجربة الطعام الراقية</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- استيراد خطوط احترافية -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA | تجربة الطعام الراقية</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- القائمة العلوية Navigation -->
-    <nav>
-        <div class="logo">AURA</div>
-        <ul>
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#menu">القائمة</a></li>
-            <li><a href="#about">قصتنا</a></li>
-            <li><a href="#contact" class="nav-btn">احجز الآن</a></li>
-        </ul>
-    </nav>
-
-    <!-- واجهة الموقع Hero -->
-    <header id="home">
-        <div class="hero-content">
-            <h2 class="subtitle">مرحباً بكم في عالم النكهات</h2>
-            <h1>AURA</h1>
-            <p>حيث يلتقي الفن مع المذاق في قلب عمان</p>
-            <div class="hero-btns">
-                <a href="#menu" class="btn-primary">اكتشف المنيو</a>
-                <a href="#contact" class="btn-outline">حجز طاولة</a>
-            </div>
+ 
+<!-- Navigation -->
+<nav>
+  <div class="logo">AURA</div>
+  <ul>
+    <li><a href="#home">الرئيسية</a></li>
+    <li><a href="#menu">القائمة</a></li>
+    <li><a href="#about">قصتنا</a></li>
+    <li><a href="#chefs">طهاتنا</a></li>
+    <li><a href="#contact" class="nav-btn">احجز الآن</a></li>
+  </ul>
+</nav>
+ 
+<!-- Hero Section -->
+<header id="home">
+  <div class="hero-content">
+    <div class="hero-line"><span class="subtitle">مرحباً بكم في عالم النكهات</span></div>
+    <h1>AURA</h1>
+    <p>حيث يلتقي الفن مع المذاق في قلب عمّان</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">اكتشف القائمة</a>
+      <a href="#contact" class="btn-outline">حجز طاولة</a>
+    </div>
+  </div>
+  <div class="scroll-hint">تمرير للأسفل<div class="scroll-dot"></div></div>
+</header>
+ 
+<!-- Stats Bar -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">2008</div><div class="stat-label">تأسس المطعم</div></div>
+  <div class="stat"><div class="stat-num">+12</div><div class="stat-label">جائزة دولية</div></div>
+  <div class="stat"><div class="stat-num">+50K</div><div class="stat-label">ضيف سعيد</div></div>
+</div>
+ 
+<!-- Menu Section -->
+<section id="menu" class="section dark-bg">
+  <div class="section-header">
+    <p class="section-tag">تذوق الفرق</p>
+    <h2 class="section-title">قائمة الطعام المختارة</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="menu-filter">
+    <button class="filter-btn active" onclick="filterMenu(this,'all')">الكل</button>
+    <button class="filter-btn" onclick="filterMenu(this,'pasta')">المعكرونات</button>
+    <button class="filter-btn" onclick="filterMenu(this,'meat')">اللحوم</button>
+    <button class="filter-btn" onclick="filterMenu(this,'seafood')">المأكولات البحرية</button>
+    <button class="filter-btn" onclick="filterMenu(this,'dessert')">الحلويات</button>
+  </div>
+  <div class="menu-grid" id="menuGrid">
+    <div class="menu-card" data-cat="pasta">
+      <div class="menu-card-img">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="باستا الترافل">
+        <span class="menu-badge">الأكثر طلباً</span>
+      </div>
+      <div class="menu-card-body">
+        <h3>باستا الترافل الملكية</h3>
+        <p>فطر بري، زيت ترافل أصلي، جبن بارميزان معتق</p>
+        <div class="menu-card-footer"><span class="price">14.5 JOD</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="meat">
+      <div class="menu-card-img">
+        <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=600&q=80" alt="ريب آي">
+      </div>
+      <div class="menu-card-body">
+        <h3>ريب آي واغيو</h3>
+        <p>لحم واغيو درجة A5، صلصة ريدوكشن، خضار موسمية</p>
+        <div class="menu-card-footer"><span class="price">32 JOD</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="seafood">
+      <div class="menu-card-img">
+        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="سيباس">
+        <span class="menu-badge">جديد</span>
+      </div>
+      <div class="menu-card-body">
+        <h3>سيباس المشوي بالأعشاب</h3>
+        <p>أعشاب البحر المتوسط، زبدة بالليمون، كبر طازج</p>
+        <div class="menu-card-footer"><span class="price">24 JOD</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="pasta">
+      <div class="menu-card-img">
+        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=80" alt="ريزوتو">
+      </div>
+      <div class="menu-card-body">
+        <h3>ريزوتو الجمبري والزعفران</h3>
+        <p>أرز أربوريو، زعفران إيراني، جمبري تايجر طازج</p>
+        <div class="menu-card-footer"><span class="price">18.5 JOD</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="meat">
+      <div class="menu-card-img">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="دجاج بالكمأ">
+      </div>
+      <div class="menu-card-body">
+        <h3>دجاج بالكريمة والكمأ</h3>
+        <p>صدر دجاج عضوي، كمأ أسود، صلصة كريمية فرنسية</p>
+        <div class="menu-card-footer"><span class="price">16 JOD</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="dessert">
+      <div class="menu-card-img">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80" alt="كريم بروليه">
+        <span class="menu-badge">Chef's Pick</span>
+      </div>
+      <div class="menu-card-body">
+        <h3>كريم بروليه بالفانيلا</h3>
+        <p>فانيلا تهيتي، كريمة مضروبة، توت موسمي</p>
+        <div class="menu-card-footer"><span class="price">8.5 JOD</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="about-img-wrap">
+    <div class="about-img"></div>
+    <div class="about-frame"></div>
+  </div>
+  <div class="about-content">
+    <p class="tag">قصتنا</p>
+    <h2>الفن على طبق من ذهب</h2>
+    <p>في أورا، نحن لا نقدم مجرد وجبات، بل نصنع ذكريات تدوم. كل طبق هو لوحة فنية صممها طهاتنا العالميون باستخدام أجود المكونات المحلية والعالمية.</p>
+    <p>نؤمن أن تجربة الطعام الحقيقية تبدأ قبل أول لقمة — من اللحظة التي تدخل فيها إلى الجو، وتلمس فيه الأناقة في كل تفصيل.</p>
+    <div class="divider-left"></div>
+    <div class="features">
+      <div class="feature-item">
+        <div class="feature-icon">🌿</div>
+        <div class="feature-text"><h4>مكونات طازجة</h4><p>مورّدون محليون موثوقون يومياً</p></div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-text"><h4>جوائز عالمية</h4><p>أفضل مطعم في الأردن 2024</p></div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🍷</div>
+        <div class="feature-text"><h4>قائمة مشروبات</h4><p>أكثر من 200 خيار مميز</p></div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">✨</div>
+        <div class="feature-text"><h4>تجربة لا تُنسى</h4><p>خدمة شخصية فائقة الاحتراف</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- Chefs Section -->
+<section id="chefs" class="chefs-section section dark-bg">
+  <div class="section-header">
+    <p class="section-tag">خلف الكواليس</p>
+    <h2 class="section-title">طهاتنا العالميون</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="chefs-grid">
+    <div class="chef-card">
+      <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" alt="أنطوان مارتيني">
+      <div class="chef-overlay">
+        <div class="chef-name">أنطوان مارتيني</div>
+        <div class="chef-title">EXECUTIVE CHEF</div>
+      </div>
+    </div>
+    <div class="chef-card">
+      <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?auto=format&fit=crop&w=600&q=80" alt="سارة الخوري">
+      <div class="chef-overlay">
+        <div class="chef-name">سارة الخوري</div>
+        <div class="chef-title">SOUS CHEF</div>
+      </div>
+    </div>
+    <div class="chef-card">
+      <img src="https://images.unsplash.com/photo-1583394293214-0b7b7b7b3f6a?auto=format&fit=crop&w=600&q=80" alt="ماركو روسي">
+      <div class="chef-overlay">
+        <div class="chef-name">ماركو روسي</div>
+        <div class="chef-title">PASTRY CHEF</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- Testimonials Section -->
+<section class="testimonials section">
+  <div class="section-header">
+    <p class="section-tag">آراء ضيوفنا</p>
+    <h2 class="section-title">ماذا قالوا عنّا</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">تجربة لا تُوصف، الطعام كان رائعاً والخدمة استثنائية. سأعود بالتأكيد مع عائلتي.</p>
+      <div class="testimonial-author">
+        <div><div class="author-name">محمد العمري</div><div class="author-loc">عمّان، الأردن</div></div>
+        <div class="author-avatar gold-avatar">م</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">أفضل مطعم زرته في الأردن. الأجواء ساحرة وباستا الترافل لا مثيل لها في المنطقة.</p>
+      <div class="testimonial-author">
+        <div><div class="author-name">ليلى حداد</div><div class="author-loc">بيروت، لبنان</div></div>
+        <div class="author-avatar dark-avatar">ل</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">احتفلنا بذكرى زواجنا هنا وكان مثالياً. الاهتمام بالتفاصيل يجعله تجربة فريدة تستحق كل دينار.</p>
+      <div class="testimonial-author">
+        <div><div class="author-name">خالد وريم الزعبي</div><div class="author-loc">عمّان، الأردن</div></div>
+        <div class="author-avatar accent-avatar">خ</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- Contact / Booking Section -->
+<section id="contact" class="section dark-bg">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p class="tag">نحن بانتظاركم</p>
+      <h2>احجز تجربتك الخاصة</h2>
+      <p>دعنا نجعل مناسبتك لا تُنسى. طاقمنا جاهز لتلبية كل رغباتكم وتجاوز توقعاتكم.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text"><h4>الموقع</h4><p>شارع الرينبو، وسط البلد — عمّان، الأردن</p></div>
         </div>
-    </header>
-
-    <!-- قسم القائمة المختصرة -->
-    <section id="menu" class="section">
-        <div class="container">
-            <h2 class="section-title">قائمة الطعام المختارة</h2>
-            <div class="menu-tabs">
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500" alt="Special Dish">
-                    <h3>باستا الترافل الملكية</h3>
-                    <p>فطر بري، زيت ترافل أصلي، جبن بارميزان معتق</p>
-                    <span class="price">14.5 JOD</span>
-                </div>
-                <!-- كرر هذه العناصر لبقية الأطباق -->
-            </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-item-text"><h4>أوقات العمل</h4><p>الأحد — الخميس: 12:00 — 11:00 م<br>الجمعة — السبت: 12:00 — 12:00 ص</p></div>
         </div>
-    </section>
-
-    <!-- قسم قصتنا About -->
-    <section id="about" class="about-section">
-        <div class="about-grid">
-            <div class="about-img"></div>
-            <div class="about-text">
-                <h2>سر التميز</h2>
-                <p>في أورا، نحن لا نقدم مجرد وجبات، بل نصنع ذكريات. كل طبق هو لوحة فنية صممها طهاتنا العالميون باستخدام أجود المكونات المحلية والعالمية.</p>
-            </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text"><h4>للحجوزات</h4><p>+962 6 555 0000</p></div>
         </div>
-    </section>
-
-    <!-- قسم الحجز Contact -->
-    <section id="contact" class="section dark">
-        <div class="container">
-            <h2 class="section-title">احجز تجربتك الخاصة</h2>
-            <form class="booking-form">
-                <input type="text" placeholder="الاسم الكامل" required>
-                <input type="number" placeholder="عدد الأفراد" required>
-                <input type="datetime-local" required>
-                <button type="submit" class="btn-primary">تأكيد الحجز</button>
-            </form>
+      </div>
+    </div>
+    <div class="booking-form">
+      <h3 class="form-title">تفاصيل الحجز</h3>
+      <div class="form-row">
+        <div class="form-group"><label>الاسم الكامل</label><input type="text" placeholder="الاسم الكامل" required></div>
+        <div class="form-group"><label>رقم الهاتف</label><input type="tel" placeholder="+962 7x xxx xxxx"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>التاريخ</label><input type="date"></div>
+        <div class="form-group"><label>الوقت</label><input type="time" value="20:00"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>عدد الأفراد</label>
+          <select>
+            <option>1 شخص</option>
+            <option>2 شخصان</option>
+            <option selected>3-4 أشخاص</option>
+            <option>5-6 أشخاص</option>
+            <option>7+ (حجز خاص)</option>
+          </select>
         </div>
-    </section>
-
-    <footer>
-        <p>جميع الحقوق محفوظة © 2026 - مطعم أورا الفاخر</p>
-    </footer>
-
+        <div class="form-group">
+          <label>المناسبة</label>
+          <select>
+            <option>عشاء عادي</option>
+            <option>عيد ميلاد</option>
+            <option>ذكرى سنوية</option>
+            <option>اجتماع عمل</option>
+            <option>خطوبة</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>ملاحظات خاصة</label>
+        <textarea placeholder="أي طلبات خاصة أو حساسية من الطعام..."></textarea>
+      </div>
+      <button type="button" class="submit-btn" onclick="submitBooking()">تأكيد الحجز</button>
+      <div class="success-msg" id="successMsg">✓ تم استلام حجزك! سنتواصل معك خلال ساعة.</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo">AURA</span>
+      <p>حيث يلتقي الفن مع المذاق. مطعم راقٍ في قلب عمّان يقدم تجربة طعام استثنائية منذ 2008.</p>
+    </div>
+    <div class="footer-col">
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#menu">القائمة</a></li>
+        <li><a href="#about">قصتنا</a></li>
+        <li><a href="#chefs">طهاتنا</a></li>
+        <li><a href="#contact">احجز الآن</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>تواصل معنا</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 مطعم أورا الفاخر — جميع الحقوق محفوظة</p>
+    <div class="social-links">
+      <a class="social-link" href="#">in</a>
+      <a class="social-link" href="#">fb</a>
+      <a class="social-link" href="#">ig</a>
+    </div>
+  </div>
+</footer>
+ 
+<script>
+  function filterMenu(btn, cat) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.menu-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+    });
+  }
+ 
+  function submitBooking() {
+    const msg = document.getElementById('successMsg');
+    msg.style.display = 'block';
+    setTimeout(() => { msg.style.display = 'none'; }, 5000);
+  }
+ 
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
